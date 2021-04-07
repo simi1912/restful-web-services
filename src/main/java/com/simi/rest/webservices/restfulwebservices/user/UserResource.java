@@ -1,5 +1,9 @@
 package com.simi.rest.webservices.restfulwebservices.user;
 
+import org.springframework.hateoas.EntityModel;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
+
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,14 +28,19 @@ public class UserResource {
     }
 
     @GetMapping("/users/{id}")
-    public User retrieveUser(@PathVariable Integer id){
+    public EntityModel<User> retrieveUser(@PathVariable Integer id){
         User user = userService.findOne(id);
 
         if(user == null){
             throw  new UserNotFoundException("id-"+id);
         }
 
-        return user;
+        WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retriveAllUsers());
+
+        EntityModel<User> resource = EntityModel.of(user);
+        resource.add(linkTo.withRel("all-users"));
+
+        return resource;
     }
 
     @ResponseStatus(code = HttpStatus.CREATED)
