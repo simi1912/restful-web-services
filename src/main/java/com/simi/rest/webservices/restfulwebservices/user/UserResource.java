@@ -1,6 +1,5 @@
 package com.simi.rest.webservices.restfulwebservices.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +24,13 @@ public class UserResource {
 
     @GetMapping("/users/{id}")
     public User retrieveUser(@PathVariable Integer id){
-        return userService.findOne(id);
+        User user = userService.findOne(id);
+
+        if(user == null){
+            throw  new UserNotFoundException("id-"+id);
+        }
+
+        return user;
     }
 
     @ResponseStatus(code = HttpStatus.CREATED)
