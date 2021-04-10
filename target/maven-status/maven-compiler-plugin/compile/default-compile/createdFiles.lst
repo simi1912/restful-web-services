@@ -1,6 +1,0 @@
-com\simi\rest\webservices\restfulwebservices\exeption\CustomizedResponseEntityExceptionHandler.class
-com\simi\rest\webservices\restfulwebservices\user\UserNotFoundException.class
-com\simi\rest\webservices\restfulwebservices\user\User.class
-com\simi\rest\webservices\restfulwebservices\helloworld\HelloWorldController.class
-com\simi\rest\webservices\restfulwebservices\user\UserDAOService.class
-com\simi\rest\webservices\restfulwebservices\helloworld\HelloWorldBean.class

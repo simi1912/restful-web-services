@@ -27,21 +27,21 @@ public class UserResource {
         return  userService.findAll();
     }
 
-    @GetMapping("/users/{id}")
-    public EntityModel<User> retrieveUser(@PathVariable Integer id){
-        User user = userService.findOne(id);
-
-        if(user == null){
-            throw  new UserNotFoundException("id-"+id);
-        }
-
-        WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retriveAllUsers());
-
-        EntityModel<User> resource = EntityModel.of(user);
-        resource.add(linkTo.withRel("all-users"));
-
-        return resource;
-    }
+//    @GetMapping("/users/{id}")
+//    public EntityModel<User> retrieveUser(@PathVariable Integer id){
+//        User user = userService.findOne(id);
+//
+//        if(user == null){
+//            throw  new UserNotFoundException("id-"+id);
+//        }
+//
+//        WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retriveAllUsers());
+//
+//        EntityModel<User> resource = EntityModel.of(user);
+//        resource.add(linkTo.withRel("all-users"));
+//
+//        return resource;
+//    }
 
     @ResponseStatus(code = HttpStatus.CREATED)
     @PostMapping(value = "/users")
