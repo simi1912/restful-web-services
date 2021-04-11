@@ -3,10 +3,7 @@ package com.simi.rest.webservices.restfulwebservices.user;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -28,7 +25,9 @@ public class User {
     @ApiModelProperty(notes = "Birth date should be in the past")
     private Date birthDate;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user"
+//            , cascade = CascadeType.ALL
+    )
     private List<Post> posts;
 
     public User() {

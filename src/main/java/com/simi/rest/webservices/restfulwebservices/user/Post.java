@@ -1,5 +1,6 @@
 package com.simi.rest.webservices.restfulwebservices.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jdk.nashorn.internal.ir.IdentNode;
 
 import javax.persistence.*;
@@ -15,6 +16,7 @@ public class Post {
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     private User user;
 
     public Post() {
