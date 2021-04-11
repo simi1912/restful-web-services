@@ -1,0 +1,16 @@
+com\simi\rest\webservices\restfulwebservices\exeption\CustomizedResponseEntityExceptionHandler.class
+com\simi\rest\webservices\restfulwebservices\user\UserResource.class
+com\simi\rest\webservices\restfulwebservices\versioning\VersioningController.class
+com\simi\rest\webservices\restfulwebservices\exeption\ExceptionResponse.class
+com\simi\rest\webservices\restfulwebservices\user\UserDAOService.class
+com\simi\rest\webservices\restfulwebservices\helloworld\HelloWorldBean.class
+com\simi\rest\webservices\restfulwebservices\versioning\PersonV2.class
+com\simi\rest\webservices\restfulwebservices\filtering\FilteringController.class
+com\simi\rest\webservices\restfulwebservices\RestfulWebServicesApplication.class
+com\simi\rest\webservices\restfulwebservices\user\UserNotFoundException.class
+com\simi\rest\webservices\restfulwebservices\user\User.class
+com\simi\rest\webservices\restfulwebservices\versioning\PersonV1.class
+com\simi\rest\webservices\restfulwebservices\helloworld\HelloWorldController.class
+com\simi\rest\webservices\restfulwebservices\SwaggerConfig.class
+com\simi\rest\webservices\restfulwebservices\filtering\SomeBean.class
+com\simi\rest\webservices\restfulwebservices\versioning\Name.class
